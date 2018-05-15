@@ -1,0 +1,37 @@
+.navbg{
+	background-color: #2A2AFF;
+	color: #FFD47F;
+	border-radius: 0px;
+	border-color: #2A2AFF
+}
+
+.act{
+	background-color: #AA25FD
+}
+h1{
+	background-color: black;
+	color: #FFD400;
+	border-radius: 10px;
+}
+.second{
+	background-color: #FFD455;
+	color: black;
+	height: 500px;
+	margin-bottom: 100px;
+	margin-top: 350px;
+	
+}
+.third{
+	background-color:#007FFF;
+	color: #FFD455;
+	height: 650px;
+	margin-top: 400px;
+	margin-bottom: 130px
+}
+.fourth{
+		background-color: #FFD455;
+	color: black;
+	height: 400px;
+	margin-bottom: 100px;
+	margin-top: 100px;
+}
