@@ -1,4 +1,7 @@
-<!DOCTYPE html>
+<?php
+session_start();
+?>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -7,7 +10,8 @@
     <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
-<body style="">
+<body>
+
 <div class="container-fluid one">
     <div class="row">
         <div class="col-sm-4">
@@ -41,8 +45,8 @@
                 <div class="nav navbar-nav navbar-right">
                     <li>
                         <form method="post">
-                            <input type="text" name="user" placeholder="User name or Phone">
-                            <input type="password" name="password" placeholder="Password">
+                            <input type="text" name="username" placeholder="User name or Phone">
+                            <input type="password" name="pass" placeholder="Password">
                             <button type="submit" class="btn btn-success" name="log" value="Log in"><span class="glyphicon glyphicon-log-in" ></span> Sign In</button>
                         </form>
                     </li><br />
@@ -54,6 +58,10 @@
         </div>
     </nav>
 </div>
+<?php
+$_SESSION['user']=$_POST['username'];
+$_SESSION['password']=$_POST['pass'];
+?>
 
 <div id="home" class="container-fluid one">
     <div class="row">
@@ -95,8 +103,8 @@ if (isset($_POST['log'])){
     //connection to the db
     include 'connection.php';
     //getting values from user
-    $usern=$_POST['user'];
-    $uspass=$_POST['password'];
+    $usern=$_POST['username'];
+    $uspass=$_POST['pass'];
     //query
     $sql="SELECT * FROM members WHERE username='$usern' OR phone='$usern' AND password='$uspass'";
 //Executing the query

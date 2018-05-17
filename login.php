@@ -1,6 +1,6 @@
 <?php
 // Start the session
-   // session_start();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +23,11 @@
     <input type="submit" name="fogot" class="form-control btn bg-info" value="Forgot Password"> <br />
 </form>
 </div>
+
+<?php
+//$_SESSION['user']=$_POST['username'];
+//$_SESSION['password']=$_POST['pass'];
+//?>
 </body>
 </html>
 <?php
@@ -37,17 +42,15 @@ if (isset($_POST['log'])){
 //Executing the query
     $result=mysqli_query($conn,$sql);
     if (mysqli_num_rows($result)>0){
-//        // Set session variables
-//        $_SESSION["user"] = "$usern";
-//        $_SESSION["password"] = "$uspass";
+      // Set session variables
+       $_SESSION["user"] = "$usern";
+      $_SESSION["password"] = "$uspass";
 
         header('location:dashboard.php');
 
     }else{
         echo " Please register first to enjoy our service";
     }
-}else{
-    echo "Invalid username and or Password";
 }
 
 if (isset($_POST['fogot'])){

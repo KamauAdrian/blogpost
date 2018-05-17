@@ -1,11 +1,10 @@
 <?php
-//if (!isset($_SESSION['user']) && !isset($_SESSION['password'])){
-//    header('location:login.php');
-//}else{
-//// Start the session
-//    session_start();
-//}
-//?>
+session_start();
+
+if (!isset($_SESSION['user']) && !isset($_SESSION['pass'])){
+    header('location:login.php');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,9 +21,9 @@
 <body>
 
 <?php
-//// Echo session variables that were set on previous page
-//echo ' You are Logged in as:'.$_SESSION['user']."<br />";
-//?>
+// Echo session variables that were set on previous page
+echo ' You are Logged in as:'.$_SESSION['user']."<br />";
+?>
 <div class="container-fluid">
     <div class="row">
     <div class="col-sm-4">
@@ -54,8 +53,8 @@
                     <li><a href="#">blog</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"> <span class="glyphicon glyphicon-user"></span> Contact us</a></li>
-                    <li><a href="#"> <span class="glyphicon glyphicon-log-out"></span>log out</a></li>
+                    <li><a href="#"> <span class="glyphicon glyphicon-user"></span> my account</a></li>
+                    <li><a href="logout.php"> <span class="glyphicon glyphicon-log-out"></span>log out</a></li>
                 </ul>
         </div>
         </div>

@@ -15,10 +15,10 @@
 <?php
 if (isset($_POST['fog'])){
     //getting values
-    $userphone=$_POST[''];
-    $userpass1=$_POST[''];
-    $userpass2=$_POST[''];
-    if ($userpass1==$userphone){
+    $userphone=$_POST['phone'];
+    $userpass1=$_POST['ps1'];
+    $userpass2=$_POST['ps2'];
+    if ($userpass1==$userpass2){
         $fpass=md5($userpass1);
         //connect to the database
         include 'connection.php';
@@ -28,7 +28,7 @@ if (isset($_POST['fog'])){
         $result=mysqli_query($conn,$sql);
         if ($result){
             echo 'Password was reset successfully';
-            header('login.php');
+            header('location:login.php');
         }else{
             echo 'Password not set';
         }
